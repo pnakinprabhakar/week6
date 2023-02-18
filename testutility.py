@@ -1,16 +1,5 @@
-import logging
-import os
-import subprocess
-import yaml
-import pandas as pd
-import datetime 
-import gc
-import re
 
 
-################
-# File Reading #
-################
 
 def read_config_file(filepath):
     with open(filepath, 'r') as stream:
@@ -20,10 +9,6 @@ def read_config_file(filepath):
             logging.error(exc)
 
 
-def replacer(string, char):
-    pattern = char + '{2,}'
-    string = re.sub(pattern, char, string) 
-    return string
 
 def col_header_val(df,table_config):
     '''
